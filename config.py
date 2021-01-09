@@ -5,6 +5,10 @@
 __author__ = 'Benny <benny.think@gmail.com>'
 
 import os
+import environs
+
+env = environs.Env()
+env.read_env()
 
 BASE_URL = "http://www.rrys2020.com"
 LOGIN_URL = "http://www.rrys2020.com/user/login"
@@ -16,7 +20,9 @@ AJAX_LOGIN = "http://www.rrys2020.com/User/Login/ajaxLogin"
 SHARE_URL = "http://www.rrys2020.com/resource/ushare"
 SHARE_WEB = "http://got002.com/resource.html?code={code}"
 TOKEN = os.environ.get("TOKEN") or "TOKEN"
-USERNAME = os.environ.get("USERNAME") or "USERNAME"
-PASSWORD = os.environ.get("PASSWORD") or "password"
+# USERNAME = os.environ.get("USERNAME") or "USERNAME"
+# PASSWORD = os.environ.get("PASSWORD") or "password"
+USERNAME = env("USERNAME", "username")
+PASSWORD = env("PASSWORD", "paswword")
 PROXY = os.environ.get("PROXY")
 MAINTAINER = os.environ.get("MAINTAINER")
