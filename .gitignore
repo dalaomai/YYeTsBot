@@ -113,3 +113,7 @@ venv.bak/
 /data/cookies.dump
 /.idea/inspectionProfiles/profiles_settings.xml
 data/
+
+
+# vscode
+.vscode
